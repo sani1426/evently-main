@@ -32,7 +32,7 @@ export async function createEvent({  event, path }: CreateEventParams) {
   try {
     await connectToDatabase()
 
-   
+
 
     const newEvent = await Event.create({ ...event, category: event.categoryId })
     revalidatePath(path)
