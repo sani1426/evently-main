@@ -1,3 +1,6 @@
 {
-  "Codegeex.GenerationPreference": "automatic"
+  "Codegeex.GenerationPreference": "automatic",
+  "editor.fontSize": 26,
+  "editor.fontFamily": "Montserrat Alternates",
+  "editor.fontWeight": "normal"
 }
