@@ -16,11 +16,11 @@ const NavItems = () => {
         return (
           <li
             key={link.route}
-            className={`${
+            className={`text-black ${
               isActive && 'bg-primary-500'
             } flex-center p-medium-16 whitespace-nowrap rounded-xl px-4 py-2 text-white`}
           >
-            <Link href={link.route}>{link.label}</Link>
+            <Link className={`${!isActive && 'hover:text-primary-500 transition-all duration-300'}`} href={link.route}>{link.label}</Link>
           </li>
         )
       })}
