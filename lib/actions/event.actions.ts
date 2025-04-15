@@ -48,11 +48,8 @@ export async function createEvent({ userId, event, path }: CreateEventParams) {
 export async function getEventById(eventId: string) {
   try {
     await connectToDatabase()
-
-    const event = await populateEvent(Event.findById(eventId))
-
+    const event = await  populateEvent(Event.findById(eventId))
     if (!event) throw new Error('Event not found')
-
     return JSON.parse(JSON.stringify(event))
   } catch (error) {
     handleError(error)
