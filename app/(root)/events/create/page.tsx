@@ -1,5 +1,12 @@
 import EventForm from "@/components/shared/EventForm";
 import { auth } from "@clerk/nextjs";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: 'create new event',
+  }
+
 
 const CreateEvent = () => {
   const { sessionClaims } = auth();
