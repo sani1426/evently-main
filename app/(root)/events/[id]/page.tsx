@@ -1,4 +1,5 @@
 import { getEventById } from "@/lib/actions/event.actions"
+import { formatDateTime } from "@/lib/utils"
 import { SearchParamProps } from "@/types"
 import Image from "next/image"
 
@@ -35,8 +36,11 @@ const event = await getEventById(id)
     <div className="flex gap-2 md:gap-3">
     <Image src="/assets/icons/calendar.svg" alt="calendar" width={32} height={32}/>
     <div className="p-medium-16 lg:p-regular-20 flex flex-wrap items-center">
-    <p>{event.startDate} - {event.endDate}</p>
-    <p className="ml-1">| {event.time}</p>
+    <p>{formatDateTime(event.startDateTime).dateOnly} - {' '} {formatDateTime(event.startDateTime).timeOnly}</p>
+    <p>{formatDateTime(event.endDateTime).dateOnly} - {' '}{formatDateTime(event.endDateTime).timeOnly}</p>
+
+
+ 
     </div>
     </div>
     <div className="p-regular-20 flex items-center gap-3">
@@ -44,6 +48,13 @@ const event = await getEventById(id)
     <p className="p-medium-16 lg:p-regular-20">{event.location}</p>
     </div>
     </div>
+    <div className="flex flex-col gap-2">
+    <p className="p-bold-20 text-grey-600">What you'll learn:</p>
+    <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
+    <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
+    </div>
+    
+
     </div>
     </div>
    </section>
