@@ -16,7 +16,7 @@ const NavItems = () => {
         return (
           <li
             key={link.route}
-            className={`text-black ${
+            className={` ${
               isActive && 'bg-primary-500 text-white'
             } ${!isActive && 'text-black hover:text-primary-500 transition-all duration-300'} flex-center p-medium-16 whitespace-nowrap rounded-xl px-4 py-2 `}
           >
